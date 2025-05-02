@@ -19,32 +19,11 @@ title: MCP
 mdc: true
 author: Dmytro Mykolenko
 addons:
-  - slidev-addon-python-runner
   - tldraw
+#  - slidev-addon-python-runner
 hideInToc: true
 
 # color: black
-
-# Optional configuration for this runner
-python:
-  # Install packages from PyPI. Default: []
-  installs: ["cowsay"]
-
-  # Code executed to set up the environment. Default: ""
-  prelude: |
-    GREETING_FROM_PRELUDE = "Hello, Slidev!"
-
-  # Automatically load the imported builtin packages. Default: true
-  loadPackagesFromImports: true
-
-  # Disable annoying warning from `pandas`. Default: true
-  suppressDeprecationWarnings: true
-
-  # Always reload the Python environment when the code changes. Default: false
-  alwaysReload: false
-
-  # Options passed to `loadPyodide`. Default: {}
-  loadPyodideOptions: {}
 ---
 
 <style>
@@ -93,6 +72,12 @@ body {
 
 <div class="animate-gradient-drift bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inset-0 bg-clip-text text-center text-8xl font-extrabold text-transparent shadow-lg shadow-white/50 b-0 rounded-md w-1/3 h-1/3 left-[35%] absolute top-1/3 p-6">MCP<p class="text-sm p-0 mx-2">(Model Context Protocol)</p>
 </div>
+
+<style>
+  .slidev-page-1 {
+    @apply bg-black;
+  }
+</style>
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
