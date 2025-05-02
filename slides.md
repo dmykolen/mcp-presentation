@@ -1,15 +1,15 @@
 ---
 # theme: seriph
 # theme: default
-theme: the-unnamed
+theme: ./theme
 #theme: slidev-theme-neversink
 colorSchema: dark
 layout: default
 
 defaults:
-  class: [bg-black]
+  class: [ bg-black ]
 
-class: [text-center, text-xs, bg-black]
+class: [ text-center, text-xs, bg-black ]
 
 info: |
   ## About Model Context Protocol (MCP)
