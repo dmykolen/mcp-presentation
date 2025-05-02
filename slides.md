@@ -18,8 +18,8 @@ transition: slide-left
 title: MCP
 mdc: true
 author: Dmytro Mykolenko
-addons:
-  - tldraw
+#addons:
+#  - tldraw
 #  - slidev-addon-python-runner
 hideInToc: true
 
