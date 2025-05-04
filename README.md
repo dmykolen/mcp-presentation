@@ -1,50 +1,78 @@
-To start the slide show:
+# MCP presentation
 
-- `pnpm install`
-- `pnpm dev`
-- visit <http://localhost:3030>
+## Quickstart
 
-Edit the [slides.md](./slides.md) to see the changes.
+```bash
+# Install slidev globally
+npm install -g slidev
+npm install
+slidev
+# open http://localhost:3030
+```
 
+## Build and deploy for production
+```bash
+slidev build
+
+# preview the build `dist/index.html`
+npx vite preview
+```
+
+## Export to `.pptx` | `.pdf` | `.md`
+```bash
+# prerequisite: install playwright
+npm i -D playwright-chromium
+
+# Export to different formats
+slidev export --format pptx
+slidev export --format pdf
+slidev export --format md
+```
+
+## Helpful commands
 
 ```bash
 npm install @slidev/types
 npm i -D prettier prettier-plugin-slidev
 npm install monaco-editor
 npm install slidev-addon-tldraw
-npm i -D playwright-chromium
-slidev export --format pptx
+
 ```
 
-**Build and deploy**
+---
+
+**Slidev Addon Python Runner (`slidev-addon-python-runner` add in future)**
+
 ```bash
-slidev build
-
-# preview the build
-npx vite preview
-```
-
--–-
-
-### Slidev Addon Python Runner (`slidev-addon-python-runner` add in future)
-
 # Optional configuration for this runner
 python:
-  # Install packages from PyPI. Default: []
-  installs: ["cowsay"]
+# Install packages from PyPI. Default: []
+installs: ["cowsay"]
+# Code executed to set up the environment. Default: ""
+prelude: |
+  GREETING_FROM_PRELUDE = "Hello, Slidev!"
+# Automatically load the imported builtin packages. Default: true
+loadPackagesFromImports: true
+# Disable annoying warning from `pandas`. Default: true
+suppressDeprecationWarnings: true
+# Always reload the Python environment when the code changes. Default: false
+alwaysReload: false
+# Options passed to `loadPyodide`. Default: {}
+loadPyodideOptions: {}
+```
 
-  # Code executed to set up the environment. Default: ""
-  prelude: |
-    GREETING_FROM_PRELUDE = "Hello, Slidev!"
+---
 
-  # Automatically load the imported builtin packages. Default: true
-  loadPackagesFromImports: true
+## Slidev
+> Slidev is a presentation tool with a focus on developer experience, and it allows you to create slides using Markdown. It supports various features like themes, transitions, and even interactive components.
 
-  # Disable annoying warning from `pandas`. Default: true
-  suppressDeprecationWarnings: true
+```bash
+npm install -g slidev
 
-  # Always reload the Python environment when the code changes. Default: false
-  alwaysReload: false
+### Create a new Slidev project
+slidev init my-presentation
+cd my-presentation
 
-  # Options passed to `loadPyodide`. Default: {}
-  loadPyodideOptions: {}
+### Run the development server
+slidev
+```
